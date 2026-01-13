@@ -1,0 +1,17 @@
+<div *ngIf="item as currentItem">
+  <h2>{{ currentItem.name }}</h2>
+
+  <p>Category: {{ currentItem.category }}</p>
+  <p>Value: {{ currentItem.value }}</p>
+  <p>Status: {{ currentItem.status }}</p>
+  <p>Date: {{ currentItem.date }}</p>
+
+  <hr />
+
+  <p>
+    <strong>Computed Value:</strong>
+    {{ computedValue }}
+  </p>
+
+  <button (click)="goBack()">Back to list</button>
+</div>

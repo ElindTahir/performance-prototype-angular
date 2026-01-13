@@ -1,0 +1,12 @@
+<div *ngIf="loading">Loading items...</div>
+
+<div *ngIf="!loading">
+  <input type="text" placeholder="Search items…" (input)="onSearch($event)" />
+
+  <select (change)="onSort($event)">
+    <option value="name">Sort by name</option>
+    <option value="value">Sort by value</option>
+  </select>
+
+  <app-list></app-list>
+</div>
