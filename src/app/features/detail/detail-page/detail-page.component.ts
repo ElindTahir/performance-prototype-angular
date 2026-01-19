@@ -16,7 +16,7 @@ export class DetailPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   ngOnInit(): void {
@@ -39,5 +39,13 @@ export class DetailPageComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['/list']);
+  }
+
+  recalculate() {
+    let result = 0;
+    for (let i = 0; i < 1_000_000; i++) {
+      result += Math.sqrt(i);
+    }
+    this.computedValue = Math.round(result);
   }
 }

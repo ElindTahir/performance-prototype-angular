@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 import { StateService } from '../../../core/services/state.service';
-import { ListComponent } from '../list/list.component';
 
 @Component({
   standalone: false,
@@ -14,11 +13,11 @@ export class ListPageComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    public stateService: StateService
+    public stateService: StateService,
   ) {}
 
   ngOnInit(): void {
-    this.dataService.loadItems(10000).subscribe((items) => {
+    this.dataService.loadItems(100).subscribe((items) => {
       this.stateService.setItems(items);
       this.loading = false;
     });
