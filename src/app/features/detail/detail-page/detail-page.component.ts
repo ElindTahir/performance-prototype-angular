@@ -43,7 +43,7 @@ export class DetailPageComponent implements OnInit {
 
   recalculate() {
     let result = 0;
-    for (let i = 0; i < 1_000_000; i++) {
+    for (let i = 0; i < 5_000_000; i++) {
       result += Math.sqrt(i);
     }
     this.computedValue = Math.round(result);
